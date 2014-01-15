@@ -1,5 +1,5 @@
 # HarmoFWK
-==================
+
 Forké depuis [d-durand/mini-fwk](https://github.com/d-durand/mini-fwk)
 
 ## Pourquoi ?
