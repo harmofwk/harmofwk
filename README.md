@@ -31,4 +31,8 @@ HarmoFWK a pour but d'ajouter des fonctionnalités, ou en modifier.
 ## Install / Getting Started
 ------------------
 
+<<<<<<< HEAD
 Tutoriel d'installation et documentations à venir.
+=======
+Tutoriel d'installation et documentations à venir.
+>>>>>>> ceaca46c04c09201ae93bfe360938730d2bb7e6c
