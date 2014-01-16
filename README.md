@@ -17,14 +17,18 @@ Ce framework est un mini framework MVC écrit en PHP, à l'origine destiné à �
 * La librairie Javascript **jQuery/jQueryUI**.
 * Toute l'architecture MVC (Modules, Actions, classe de BDD, config etc).
 
-HarmoFWK a pour but d'ajouter des fonctionnalités, ou en modifier : 
+HarmoFWK a pour but d'ajouter des fonctionnalités, ou en modifier.
 
-	Ajout d'un .htaccess pour la réecriture d'URL (URL Rewriting)
-	Ajout d'un ORM (Object Relationnal Mapping) pour automatiser la partie accès aux données (Doctrine, Ezpdo...)
-	Amélioration de certaines classes et automatisation d'autres tâches
-	...
+## Ajouts et nouveautés
+------------------
+
+* Ajout d'un .htaccess pour la réecriture d'URL (URL Rewriting) => DONE
+* Amélioration de l'affichage des templates => DOING
+* Ajout d'un ORM (Doctrine ou EzPDO) pour automatiser la couche Model => TODO
+* Ajout de la librairie ZebraForm pour gérer les formulaires => TODO
+* Amélioration de certaines classes et automatisation d'autres tâches => TODO
 
 ## Install / Getting Started
 ------------------
 
-	A venir
+Tutoriel d'installation et documentations à venir.
