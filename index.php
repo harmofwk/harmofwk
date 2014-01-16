@@ -102,9 +102,9 @@ foreach($debugs as $d)
 $tpl->assign("erreurs",$aff_errs);
 
 // Affichage du template selon le mode voulue
-if($request->displayModuleOnly)
+if($site->displayModuleOnly)
 	$tpl->display('module.tpl');
-elseif($request->displayModuleInDialog)
+elseif($site->displayModuleInDialog)
 	$tpl->display('modal.tpl');
 else
 	$tpl->display('main.tpl');
