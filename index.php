@@ -1,6 +1,8 @@
 <?php
-
+//
 // Gestionnaire d'Exceptions : Template d'erreurs
+//
+
 function exc($exc){
 	global $tpl;
 	global $err;
@@ -16,8 +18,9 @@ function erreur($errno, $errstr, $errfile, $errline){
 	$debugs[]= "<b>$errfile</b> : $errline $errstr";
 }
 
-
+//
 // Initialisation de la page 
+//
 
 header('Content-type:text/html; charset=utf-8');
 ini_set('display_errors',1);
@@ -27,22 +30,18 @@ set_exception_handler('exc');
 set_error_handler('erreur');
 $debugs = array();
 
-//--------------------------------------------------------------------------
-// empêcher les affichages dans les modules (echo, print, etc)
-//--------------------------------------------------------------------------
+// Capture des affichages parasites
 ob_start();
 
-//--------------------------------------------------------------------------
-//paramètres et chargeur de classes
-//--------------------------------------------------------------------------
+// Chargeurs de classes automatiques
 require_once("conf/Params.ini.php");
 require_once("lib/Autoload.php");
 
-//--------------------------------------------------------------------------
-//classes outils
-//--------------------------------------------------------------------------
+//
+// Classes du wrapper config
+//
 
-//moteur de template
+// Template
 require_once('lib/Smarty-3.1.1/libs/Smarty.class.php');
 $tpl = new Smarty();
 $tpl->template_dir = 'templates/';
@@ -51,13 +50,13 @@ $tpl->config_dir = 'lib/tpl/configs/';
 $tpl->cache_dir = 'lib/tpl/cache/';
 
 
-//Objet Session
+// Session
 $session=Session::get_instance();
 
-//Objet Site
+// Site
 $site=Site::get_instance($session);
 
-//Objet Base de données (PDO)
+// Base de données
 try{
 	$db=DB::get_instance();
 }catch(Exception $e){
@@ -66,30 +65,23 @@ try{
 	$db=null;
 }
 
-//Objet Requete
+// Requête
 $request=Request::get_instance();
 
-//Stocke ces objets dans un tableau
+// Wrapper
 $config=array('db'=>$db,'tpl'=>$tpl,'session'=>$session,'req'=>$request,'site'=>$site);
 
 
-//--------------------------------------------------------------------------
-//Chargement du menu
-//--------------------------------------------------------------------------
+// Chargement du menu
 include ("conf/Menus.ini.php");
 $tpl->assign("menus",$menus);
 
 
-//--------------------------------------------------------------------------
-//Chargement du module
-//--------------------------------------------------------------------------
+// Chargement du module actuel
 $moteur=new FrontController($config);
 $moteur->load_content($tpl);
 
-//--------------------------------------------------------------------------
-//Chargement de blocs d'affichage
-//--------------------------------------------------------------------------
-
+// Chargement des blocs statiques
 include ("conf/Blocs.ini.php");
 foreach ($blocs as $b){
 	$bl = new $b();
@@ -99,27 +91,17 @@ foreach ($blocs as $b){
 	$tpl->assign("Bloc_$b",$res);
 }
 
-
-//récupère les affichages "parasites" (echo, print, var_dump...)
+// Récupération des affichages parasites
 $echx = ob_get_clean();
+$tpl->assign("affichages",$echx);
 
-//--------------------------------------------------------------------------
-//Gestion d'erreurs
-//--------------------------------------------------------------------------
-
-//affichage des erreurs résiduelles
+// Récupération des erreurs parasites
 $aff_errs="";
 foreach($debugs as $d)
 	$aff_errs .=  "<div>$d</div>";
 $tpl->assign("erreurs",$aff_errs);
 
-//affichages parasites
-$tpl->assign("affichages",$echx);
-
-//--------------------------------------------------------------------------
-//affiche le template principal, le module seul ou le module dans une boite de dialogue
-// paramètre GET : displayModuleOnly=1
-//--------------------------------------------------------------------------
+// Affichage du template selon le mode voulue
 if($request->displayModuleOnly)
 	$tpl->display('module.tpl');
 elseif($request->displayModuleInDialog)
