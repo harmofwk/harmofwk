@@ -1,9 +1,28 @@
 <?php
+
+// Gestionnaire d'Exceptions : Template d'erreurs
+function exc($exc){
+	global $tpl;
+	global $err;
+	$err=true;
+	ob_end_flush();
+	$tpl->assign('message',$exc->getFile()." : ".$exc->getLine()."<br>".$exc->getMessage());
+	$tpl->display('erreur.tpl');
+}
+
+// Gestionnaire d'erreurs : Affiche les erreurs dans une boite sous la page
+function erreur($errno, $errstr, $errfile, $errline){
+	global $debugs;
+	$debugs[]= "<b>$errfile</b> : $errline $errstr";
+}
+
+
+// Initialisation de la page 
+
 header('Content-type:text/html; charset=utf-8');
 ini_set('display_errors',1);
-//--------------------------------------------------------------------------
-//gestionnaire d'exception
-//--------------------------------------------------------------------------
+
+// Gestion d'erreurs et exceptions 
 set_exception_handler('exc');
 set_error_handler('erreur');
 $debugs = array();
@@ -107,23 +126,4 @@ elseif($request->displayModuleInDialog)
 	$tpl->display('modal.tpl');
 else
 	$tpl->display('main.tpl');
-
-//--------------------------------------------------------------------------
-//gestionnaire d'exceptions
-//--------------------------------------------------------------------------
-function exc($exc){
-	global $tpl;
-	global $err;
-	$err=true;
-	ob_end_flush();
-	$tpl->assign('message',$exc->getFile()." : ".$exc->getLine()."<br>".$exc->getMessage());
-	$tpl->display('erreur.tpl');
-}
-//--------------------------------------------------------------------------
-//gestionnaire d'erreurs
-//--------------------------------------------------------------------------
-function erreur($errno, $errstr, $errfile, $errline){
-	global $debugs;
-	$debugs[]= "<b>$errfile</b>:$errline $errstr";
-}
 ?>
