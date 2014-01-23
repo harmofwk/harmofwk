@@ -1,11 +1,9 @@
-{if isset($login) }	
+{if $login}	
 <ul class="nav navbar-nav navbar-right">
-	<li><a href='?module=Connexion&action=deconnect'>{$login} | Se déconnecter</a></li>
+	<li><a href='/connexion/deconnect'> {$login} | Se déconnecter</a></li>
 </ul>
-
-
 {else}
-	<form class="navbar-form navbar-right" role="form" method='POST' action="index.php?module=Connexion&action=login">
+	<form class="navbar-form navbar-right" role="form" method='POST' action="/connexion/login">
 		<div class="form-group">
 			<input name='Login' type="text" placeholder="Identifiant" class="form-control">
 		</div>

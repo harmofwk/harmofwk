@@ -25,9 +25,8 @@ class Site{
 		session_write_close();
 
 		global $err;
-		//ne pas rediriger si des exceptions ont été levées
 		if(!$err){
-			header("Location: ?module=$module&action=$action");
+			header("Location: /$module/$action");
 			exit();
 		}
 	}
