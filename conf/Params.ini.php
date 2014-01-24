@@ -3,10 +3,8 @@
 /*
 ** Fichier de paramètres centralisé de HarmoFWK
 ** 
-** Vous pouvez renseigner ici tout vos paramètres
-** de Base de données, sécurités, noms de répertoires, 
-** affichages...
-**
+** Renseignez chaque point avec soin pour configurer votre site !
+** Ces paramètres sont ensuite utilisés à divers endroits par le Framework.
 ** 
 **/
 
@@ -25,6 +23,12 @@ define("PORT","");
 //
 
 define("SALT", "th1sisas4lt");
+
+//
+// Définit si la réecriture d'url est activée (_.htaccess renommé en .htaccess requis au niveau d'Apache)
+//
+
+define("URLREWRITE", true);
 
 //
 // Booléen pour afficher ou non le fil d'ariane sur toutes les pages du sites

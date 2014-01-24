@@ -88,12 +88,13 @@ $moteur->load_content($tpl);
 /****************************
 ** Chargement des blocs statiques sur la page
 ****************************/
-include ("conf/Blocs.ini.php");
+include ("blocs/Blocs.ini.php");
 foreach ($blocs as $b){
+	include ("blocs/$b/$b.bloc.php");
 	$bl = new $b();
 	$bl->set_variables($config);
 	$bl->display();
-	$res=$tpl->fetch("file:blocs/$b.bloc.tpl");
+	$res=$tpl->fetch("file:blocs/$b/$b.bloc.tpl");
 	$tpl->assign("Bloc_$b",$res);
 }
 

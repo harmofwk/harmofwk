@@ -22,11 +22,7 @@ HarmoFWK a pour but d'ajouter des fonctionnalités, ou en modifier.
 ## Ajouts et nouveautés
 ------------------
 
-* Ajout d'un .htaccess pour la réecriture d'URL (URL Rewriting) => DONE
-* Amélioration de l'affichage des templates => DOING
-* Ajout d'un ORM (Doctrine ou EzPDO) pour automatiser la couche Model => TODO
-* Ajout de la librairie ZebraForm pour gérer les formulaires => TODO
-* Amélioration de certaines classes et automatisation d'autres tâches => TODO
+A venir
 
 ## Install / Getting Started
 ------------------
