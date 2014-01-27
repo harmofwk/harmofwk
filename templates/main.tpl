@@ -1,14 +1,17 @@
 <!-- start template-->
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>{$titre}</title>
 		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-1.10.2.min.js'></script>
 		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-ui-1.10.3.custom.min.js'></script>	
 		<script src='http://{$smarty.server.SERVER_NAME}/styles/bootstrap/js/bootstrap.min.js'></script>	
-		<script src='http://{$smarty.server.SERVER_NAME}/js/default.js'></script>	
+		<script src='http://{$smarty.server.SERVER_NAME}/js/default.js'></script>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/zebra_form.js'></script>
 		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/ui-lightness/jquery-ui-1.10.3.custom.min.css' />
 		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/bootstrap/css/bootstrap.min.css' />	
 		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/defaut.css' />
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/zebraform/zebra_form.css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>

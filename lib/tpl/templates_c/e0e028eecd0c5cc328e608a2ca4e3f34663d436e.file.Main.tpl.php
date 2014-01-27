@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.1, created on 2014-01-23 20:16:42
+<?php /* Smarty version Smarty-3.1.1, created on 2014-01-27 19:35:36
          compiled from "templates\Main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2063052e178aa7bd011-40378775%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e0e028eecd0c5cc328e608a2ca4e3f34663d436e' => 
     array (
       0 => 'templates\\Main.tpl',
-      1 => 1389987858,
+      1 => 1390649739,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.1',
+  'unifunc' => 'content_52e178aadf713',
   'variables' => 
   array (
     'titre' => 0,
@@ -27,10 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'erreurs' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.1',
-  'unifunc' => 'content_52e178aadf713',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_52e178aadf713')) {function content_52e178aadf713($_smarty_tpl) {?><!-- start template-->
+<!DOCTYPE html>
 <html>
 	<head>
 		<title><?php echo $_smarty_tpl->tpl_vars['titre']->value;?>
@@ -42,13 +43,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<script src='http://<?php echo $_SERVER['SERVER_NAME'];?>
 /styles/bootstrap/js/bootstrap.min.js'></script>	
 		<script src='http://<?php echo $_SERVER['SERVER_NAME'];?>
-/js/default.js'></script>	
+/js/default.js'></script>
+		<script src='http://<?php echo $_SERVER['SERVER_NAME'];?>
+/js/zebra_form.js'></script>
 		<link rel='stylesheet' href='http://<?php echo $_SERVER['SERVER_NAME'];?>
 /styles/ui-lightness/jquery-ui-1.10.3.custom.min.css' />
 		<link rel='stylesheet' href='http://<?php echo $_SERVER['SERVER_NAME'];?>
 /styles/bootstrap/css/bootstrap.min.css' />	
 		<link rel='stylesheet' href='http://<?php echo $_SERVER['SERVER_NAME'];?>
 /styles/defaut.css' />
+		<link rel='stylesheet' href='http://<?php echo $_SERVER['SERVER_NAME'];?>
+/styles/zebraform/zebra_form.css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>

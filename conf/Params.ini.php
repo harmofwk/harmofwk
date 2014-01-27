@@ -15,7 +15,7 @@
 define("DB_HOST","localhost");
 define("DB_USER","root");
 define("DB_PASS","");
-define("BASE","");
+define("BASE","base_fwk");
 define("PORT","");
 
 //
@@ -31,7 +31,7 @@ define("SALT", "th1sisas4lt");
 define("URLREWRITE", true);
 
 //
-// Booléen pour afficher ou non le fil d'ariane sur toutes les pages du sites
+// Booléen pour afficher ou non le fil d'ariane sur toutes les pages du site
 // Sous la forme Home / {module} / {titre de la page}
 //
 

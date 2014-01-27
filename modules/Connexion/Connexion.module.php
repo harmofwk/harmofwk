@@ -1,7 +1,9 @@
 <?php
 class Connexion extends Module{
 			
-
+	public function action_index(){
+		$this->site->redirect("index");
+	}
 	public function action_login(){
 
 		// A FAIRE
@@ -9,7 +11,7 @@ class Connexion extends Module{
 		//charger le membre
 		//$user=Membre::chercherParId(/*mettre l'id*/);
 		//$this->session->ouvrir($user);
-		
+
 		//code de demo
 		$this->session->ouvrir($this->req->Login); 	
 		$this->tpl->assign('login', $this->req->Login);

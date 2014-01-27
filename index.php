@@ -59,15 +59,13 @@ $session=Session::get_instance();
 $site=Site::get_instance($session);
 
 /****************************
-** Base de données ... BIENTOT REMPLACE PAR DOCTRINE/EZPDO
+** Base de données géré par l'ORM Doctrine
 ****************************/
-try{
-	$db=DB::get_instance();
-}catch(Exception $e){
-	$site->ajouter_message("Impossible de se connecter sur la base de données ".DB_HOST."/".BASE,ALERTE);
-	$site->ajouter_message("Editer les paramètres du fichier <b>conf/Params.ini.php</b>",ALERTE);	
-	$db=null;
-}
+
+require_once('lib/Doctrine/Doctrine.php');
+spl_autoload_register(array('Doctrine_Core', 'autoload'));
+$dsn = 'mysql://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.BASE;
+$db = Doctrine_Manager::connection($dsn);
 
 /****************************
 ** Wrapper Request
