@@ -66,6 +66,12 @@ require_once('lib/Doctrine/Doctrine.php');
 spl_autoload_register(array('Doctrine_Core', 'autoload'));
 $dsn = 'mysql://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.BASE;
 $db = Doctrine_Manager::connection($dsn);
+try {
+	$db->connect();
+}catch(Exception $e) {
+	$db = null;
+}
+
 
 /****************************
 ** Wrapper Request
@@ -76,6 +82,10 @@ $request=Request::get_instance();
 ** Wrapper de config  
 ****************************/
 $config=array('db'=>$db,'tpl'=>$tpl,'session'=>$session,'req'=>$request,'site'=>$site);
+
+// Page d'installation
+if(file_exists("conf/INSTALL") && $request->module != 'install')
+	$site->redirect("install");
 
 /****************************
 ** Chargement du frontController et du module 

@@ -1133,7 +1133,7 @@ class Zebra_Form
      *
      *  @return mixed                   Returns or displays the rendered form.
      */
-    function render($template = '', $return = false, $variables = '')
+    function render($template = '', $return = true, $variables = '')
     {
 
         // if
@@ -2198,11 +2198,14 @@ class Zebra_Form
             '$("#' . $this->form_properties['name'] . '").Zebra_Form(' . ($javascript_object_properties != '' ? '{' . $javascript_object_properties . '}' : '') . ')})}}' .
             $function_name . '()</script>';
 
-        // if $return argument was TRUE, return the result
+        /*// if $return argument was TRUE, return the result
         if ($return) return $output;
 
         // if $return argument was FALSE, output the content
-        else echo $output;
+        else echo $output;*/
+
+        // Modification pour HarmoFWK, on retourne le résultat HTML pour pouvoir l'inclure et le gérer dans Smarty
+        return $output;
 
     }
 

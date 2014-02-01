@@ -3,6 +3,10 @@
 * Chargeur de classes
 */
 function __autoload_my_classes($name) {
+	if($name == "Zebra_Form")
+	{
+		require_once(LIB . "/Zebraform/$name.php");
+	}
     if(file_exists(CLASSES . "/$name.class.php"))
     	require_once( CLASSES . "/$name.class.php");
     else if(file_exists(LIB . "/$name.class.php"))
