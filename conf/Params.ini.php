@@ -28,14 +28,7 @@ define("SALT", "th1sisas4lt");
 // Définit si la réecriture d'url est activée (_.htaccess renommé en .htaccess requis au niveau d'Apache)
 //
 
-define("URLREWRITE", true);
-
-//
-// Booléen pour afficher ou non le fil d'ariane sur toutes les pages du site
-// Sous la forme Home / {module} / {titre de la page}
-//
-
-define("BREADCRUMB", true);
+define("URLREWRITE", false);
 
 //
 // Constantes des chemins vers les répertoires du Framework
@@ -49,4 +42,11 @@ define('LIB',dirname($_SERVER["SCRIPT_FILENAME"])."/lib");
 define('BLOCS',dirname($_SERVER["SCRIPT_FILENAME"])."/blocs");
 
 define('DEBUG', 0);
+
+//
+// Définissez dans cet array toutes vos classes Doctrine_Record si vous souhaitez les créer automatiquement à l'aide de Doctrine
+//
+
+$my_tables_doctrine = array('News');
+
 ?>

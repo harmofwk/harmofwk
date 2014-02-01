@@ -18,7 +18,7 @@ class Module{
 	protected $tpl_name="";
 
 	public function init(){
-		
+	
 	}
 	
 	//variables de config du site
@@ -39,6 +39,6 @@ class Module{
 	//set : nom du template  charger
 	public function set_tpl_name($tpl){
 		$this->tpl_name=$tpl;	
-	}		
+	}
 }
 ?>

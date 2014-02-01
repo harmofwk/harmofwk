@@ -26,10 +26,15 @@ class Site{
 
 		global $err;
 		if(!$err){
-			if(URLREWRITE == true)
-				header("Location: /$module/$action");
-			else
-				header("Location: ?module=$module&action=$action");
+			if(defined("URLREWRITE"))
+			{
+				if(URLREWRITE == true)
+					header("Location: /$module/$action");
+				else
+					header("Location: ?module=$module&action=$action");
+			}
+			else header("Location: ?module=$module&action=$action");
+
 			exit();
 		}
 	}
