@@ -1,4 +1,4 @@
-{if $login}	
+{if isset($login)}	
 <ul class="nav navbar-nav navbar-right">
 	<li><a href='/connexion/deconnect'> {$login} | Se déconnecter</a></li>
 </ul>
