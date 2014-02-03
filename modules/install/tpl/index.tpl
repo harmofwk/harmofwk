@@ -45,3 +45,6 @@ HarmoFWK offre également la librairie CSS Kickstart, semblable à Bootstrap. </
 	Vous pouvez définir des blocs chacun dans un dossier distinct dans <code>blocs/</code>, en suivant l'exemple du bloc Login déjà défini pour exemple que vous pouvez reprendre et compléter. <br />
 	Vous devrez ensuite lister tout vos blocs dans l'array <code>blocs/Blocs.ini.php</code> afin que le frameork puisse les charger facilement. 
 </p>
+<p> 
+	Une fois l'installation terminé, vous pouvez supprimer le fichier <code>conf/INSTALL</code>, et pour plus de sécurité, vous pouvez supprimer le module <code>install</code>. 
+</p>

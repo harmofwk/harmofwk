@@ -61,7 +61,7 @@ class install extends Module{
 	public function action_initdb(){
 
 		global $my_tables_doctrine;
-		
+
 		foreach($my_tables_doctrine as $t)
 		{
 			try {
@@ -74,6 +74,11 @@ class install extends Module{
 		}
 
 		$this->site->redirect("install");
+	}
+
+	public function action_doc(){
+		// Action qui ne fait rien de particulier ici
+		// Affiche quelques élèments de doc utiles
 	}
 
 	
