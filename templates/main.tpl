@@ -22,8 +22,8 @@
 		<nav>
 			<ul class="menu"> 
 				<li><a href="{getLien module=index action=index}"> Index </a></li>
-				<li><a href="{getLien module=install action=index}"> Install </a></li>
-				<li><a href="{getLien module=install action=doc}"> Getting Start </a></li>
+				<li><a href="{getLien module=install action=index}"> Installation </a></li>
+				<li><a href="{getLien module=install action=doc}"> Documentations </a></li>
 			</ul>
 		</nav>
 
