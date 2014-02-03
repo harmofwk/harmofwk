@@ -19,6 +19,12 @@ define("BASE","base_fwk");
 define("PORT","");
 
 //
+// Adresse Email de contact de l'admin
+//
+
+define("EMAIL", "admin@localhost");
+
+//
 // Salt pour les passwords, fortement recommandé pour éviter les attaques par rainbow tables
 //
 
@@ -28,7 +34,7 @@ define("SALT", "th1sisas4lt");
 // Définit si la réecriture d'url est activée (_.htaccess renommé en .htaccess requis au niveau d'Apache)
 //
 
-define("URLREWRITE", false);
+define("URLREWRITE", true);
 
 //
 // Constantes des chemins vers les répertoires du Framework

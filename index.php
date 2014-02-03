@@ -8,6 +8,7 @@ function exc($exc){
 	global $err;
 	$err=true;
 	ob_end_flush();
+	$tpl->assign('email', EMAIL);
 	$tpl->assign('message',$exc->getFile()." : ".$exc->getLine()."<br>".$exc->getMessage());
 	$tpl->display('Error.tpl');
 }
@@ -66,11 +67,6 @@ require_once('lib/Doctrine/Doctrine.php');
 spl_autoload_register(array('Doctrine_Core', 'autoload'));
 $dsn = 'mysql://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.BASE;
 $db = Doctrine_Manager::connection($dsn);
-try {
-	$db->connect();
-}catch(Exception $e) {
-	$db = null;
-}
 
 
 /****************************
@@ -122,8 +118,6 @@ $tpl->assign("erreurs",$aff_errs);
 ****************************/
 if($site->DisplayModuleOnly)
 	$tpl->display('ModuleOnly.tpl');
-elseif($site->DisplayModuleDialog)
-	$tpl->display('ModuleDialog.tpl');
 else
 	$tpl->display('Main.tpl');
 ?>

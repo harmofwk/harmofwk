@@ -14,46 +14,57 @@
 		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/defaut.css' />
 	</head>
 	<body>
+
 		<header>
 			<h1> HarmoFwk </h1>
 		</header>
+
 		<nav>
 			<ul class="menu"> 
-				<li><a href="#"> Index </a></li>
-				<li><a href="#"> Install </a></li>
-				<li><a href="#"> Getting Start </a></li>
+				<li><a href="{getLien module=index action=index}"> Index </a></li>
+				<li><a href="{getLien module=install action=index}"> Install </a></li>
+				<li><a href="{getLien module=install action=doc}"> Getting Start </a></li>
 			</ul>
 		</nav>
 
-
-    <div class="container">
-
 		{if $messages}
-			<div class="bs-callout bs-callout-danger">
+		<div id="zonemessage">
 				{$messages}
-			</div>
+		</div>
 		{/if}
 
-		<div id='module'>
-			{$bloc_contenu}
-		</div>			
-				{if $affichages}
-			<div class='alert alert-info'>
-				<h4> Erreurs ! </h4>
-				<p>
-				{$affichages}
-				</p>
+		<div id="page">
+
+			<div class="grid flex">
+				<div class="col_8">
+					{$bloc_contenu}
+				</div>
+
+				<div class="col_4">
+					{$Bloc_Login}
+				</div>
 			</div>
-			{/if}
-			{if $erreurs}
-			<div class='alert alert-warning'>
-				<h4> Erreurs ! </h4>			
-				<p>
-				{$erreurs}
-				</p>
-			</div>
-			{/if}
-	</div>
+
+			<div class="clear"></div>
+
+		</div>
+
+		<!-- BEGIN. Supprimer pour la prod... -->
+		{if $affichages}
+		<div class='notice error'>
+			<h4> Affichages </h4>
+			<p>{$affichages}</p>
+		</div>
+		{/if}
+
+		{if $erreurs}
+		<div class='notice error'>
+			<h4> Erreurs </h4>			
+			<p>{$erreurs}</p>
+		</div>
+		{/if}
+		<!-- Supprimer pour la prod... END. -->
+
 	</body>
 		
 </html>
