@@ -1,40 +1,31 @@
 <!-- start template-->
+<!DOCTYPE html>
 <html>
 	<head>
-	<title>{$titre}</title>
-	
-	<link rel='stylesheet' href='styles/defaut.css' />
-	<link rel='stylesheet' href='styles/smoothness/jquery-ui-1.8.5.custom.css' />
-
+		<title> Erreur </title>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-1.10.2.min.js'></script>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-ui-1.10.3.custom.min.js'></script>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/kickstart.js'></script>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/zebra_form.js'></script>
+		<script src='http://{$smarty.server.SERVER_NAME}/js/default.js'></script>
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/ui-lightness/jquery-ui-1.10.3.custom.min.css' />
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/kickstart/kickstart.css' />
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/zebraform/zebra_form.css' />
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/defaut.css' />
 	</head>
 	<body>
-	<div id='page'>
-		<div id='login' title='voir le code du module Modules/Login'>Bloc login fictif &darr;
-			{$Bloc_Login}
-		</div>
+		<div id='page'>
+			<h3> Oups ! Une erreur s'est produite. =( </h3>
 
-		<div id='entete'>
-		<a href='?module=index'>Mini-FWK</a>
-		</div>
-	
-		<div id='menu'>
-			<a href='?' title='contenu'>Defaut</a> Exemples &rarr; 
-			{foreach $menus as $m=>$href}
-			<a href='{$href}'>{$m}</a>
-			{/foreach}
-		</div>
-	
-	<div class='echo' style='background:#FFF9C4;border:5px red dotted;margin-top:20px'>
-			<h1>Erreur</h1>
-			
-			{$message|default:"Le site a rencontré un problème."}
+			<p>
+				Vous pouvez avertir l'administrateur à l'adresse suivante : {$email} <br />
+				N'oubliez pas de copier/coller l'erreur ci-dessous. :)
+			</p>
+
+			<div class='notice error'>
+				{$message|default:"Le site a rencontré un problème."}
 			</div>
-
-
-			
-			
 		</div>
-	</div>
 	</body>
 		
 </html>

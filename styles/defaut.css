@@ -13,3 +13,19 @@ body{
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Arimo",arial,verdana,sans-serif;
 }
+
+p {
+	text-align: justify;
+}
+
+#page {
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width: 950px;
+	background-color: white;
+}
+
+/* TODO : user-code here
+// ...
+*/

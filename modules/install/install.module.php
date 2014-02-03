@@ -5,8 +5,7 @@ class install extends Module{
 		$this->set_title("Installation");
 
 		global $my_tables_doctrine;
-		print_r($my_tables_doctrine);
-		
+
 		// Sécurisation de ce module, l'install doit être activé
 		if(!file_exists("conf/INSTALL"))
 		{
@@ -42,24 +41,35 @@ class install extends Module{
 			$this->tpl->assign("connexion_bdd", false);
 		}
 
+		// Chargement de Zebra_Form 
+		try   {
+			$test = new Zebra_Form("form");
+			$this->tpl->assign("zf", true);
+		}
+		catch(Exception $e) {
+			$this->tpl->assign("zf", false);
+		}
+
+		// Chargement des tables Doctrine Record
+		foreach ($my_tables_doctrine as $table) {
+			$my_tables[] = $table;
+		}
+		$this->tpl->assign("my_tables", $my_tables);
+
 	}
 
 	public function action_initdb(){
 
-
-		// 
-		// TODO : remplir l'array avec le nom de toutes les tables à créer (class extends Doctrine_Record)
-		// dans params ini php
-
-
-		foreach($tables as $t)
+		global $my_tables_doctrine;
+		
+		foreach($my_tables_doctrine as $t)
 		{
 			try {
 				$table = Doctrine_Core::getTable($t); 
 				$this->db->export->createTable($table->getTableName(), $table->getColumns());
 			    $this->site->ajouter_message("La table ".$t." a bien été crée.");
 			} catch(Doctrine_Connection_Exception $e) { // Si une exception est lancée.
-				echo $e->getMessage(); // On l'affiche.
+				$this->site->ajouter_message("Une erreur s'est produite lors de la création d'une table.");
 			}			
 		}
 

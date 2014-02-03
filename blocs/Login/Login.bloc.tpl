@@ -1,16 +1,13 @@
-{if isset($login)}	
-<ul class="nav navbar-nav navbar-right">
-	<li><a href='/connexion/deconnect'> {$login} | Se déconnecter</a></li>
-</ul>
+<h4> Espace Membre </h4>
+{if isset($login)}
+	<p> Bienvenue {$login} ! <br />
+		<a href='{getLien module=connexion action=deconnect}'> Se déconnecter </a>
+	</p>
 {else}
-	<form class="navbar-form navbar-right" role="form" method='POST' action="/connexion/login">
-		<div class="form-group">
-			<input name='Login' type="text" placeholder="Identifiant" class="form-control">
-		</div>
-		<div class="form-group">
-			<input name='Pass' type="password" placeholder="Pass" class="form-control">
-		</div>
-	<input type="submit" class="btn btn-success" value='Connexion'>
+	<form method='POST' action="{getLien module=connexion action=login}">
+		<input name='Login' type="text" placeholder="Identifiant">
+		<input name='Pass' type="password" placeholder="Pass">
+		<div class="clear"></div>
+		<input type="submit" value='Connexion'>
 	</form>
 {/if}
-</div>
