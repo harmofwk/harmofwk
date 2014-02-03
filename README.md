@@ -22,9 +22,25 @@ HarmoFWK a pour but d'ajouter des fonctionnalités, ou en modifier.
 ## Ajouts et nouveautés
 ------------------
 
-A venir
+A ce jour, HarmoFWK possède plusieurs fonctionnalités supplémentaires : 
+* Gestion de l'URL Rewriting (dans le framework et dans Smarty).
+* Intégration de Doctrine qui facilite grandement les accès en base.
+* Intégration de Zebra_Form, puissante librairie de création de formulaires HTML.
+* Intégration de Kickstart, librairie CSS simpliste semblable à bootstrap.
+
+Consultez la documentation disponible à l'installation pour en savoir plus sur ces librairies ! 
 
 ## Install / Getting Started
 ------------------
 
-Tutoriel d'installation et documentations à venir.
+Un module d'installation est activée dès la première utilisation. Si ce n'est pas le cas, créez le fichier INSTALL dans le dossier conf/.
+Vous pouvez y vérifier la configuration du fichier Params.ini.php, des blocs et des tables chargées. Vous pouvez créez vos tables dans votre base de données. 
+Supprimez le fichier INSTALL pour terminer l'installation (l'accès à ce module ne sera plus possible). 
+
+## Todo-List 
+------------------
+
+Listes des choses à développer ou bugs à fixer :
+* Fix : smarty_function_getLien : ajouter la gestion des paramètres en GET dans les liens.
+* Enhancement : Supprimer le fichier Blocs.ini.php et trouver les blocs automatiquement.
+* Enhancement : Supprimer la variable $my_tables_doctrine et trouver les tables automatiquement.
