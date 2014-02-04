@@ -129,3 +129,14 @@ if ($form->validate()) {
 $render = $form->render();
 $this->site->assign("form", $render);
 </pre>
+
+<h4> HarmoFWK </h4>
+
+<p> Quelques notions sur le framework en lui-même. </p>
+
+<p> Vous pouvez utilisez la fonction plugin de Smarty getLien pour générer vos liens, selon l'activation ou non de l'URL Rewriting. Cette fonction écrit vos liens dans vos templates et vous permet d'envoyer deux paramètres en GET. </p>
+
+<pre>
+&lt;a href="&#123;getLien module=index action=index}"&gt; Index &lt;/a&gt;
+&lt;a href="&#123;getLien module=install action=doc arg1=test val1=1 arg2=test2 val2=2}"&gt; Tests &lt;/a&gt;
+</pre>
