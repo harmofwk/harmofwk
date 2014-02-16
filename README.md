@@ -36,11 +36,3 @@ Consultez la documentation disponible à l'installation pour en savoir plus sur 
 Un module d'installation est activée dès la première utilisation. Si ce n'est pas le cas, créez le fichier INSTALL dans le dossier conf/.
 Vous pouvez y vérifier la configuration du fichier Params.ini.php, des blocs et des tables chargées. Vous pouvez créez vos tables dans votre base de données. 
 Supprimez le fichier INSTALL pour terminer l'installation (l'accès à ce module ne sera plus possible). 
-
-## Todo-List 
-------------------
-
-Listes des choses à développer ou bugs à fixer :
-* Fix : smarty_function_getLien : ajouter la gestion des paramètres en GET dans les liens.
-* Enhancement : Supprimer le fichier Blocs.ini.php et trouver les blocs automatiquement.
-* Enhancement : Supprimer la variable $my_tables_doctrine et trouver les tables automatiquement.
