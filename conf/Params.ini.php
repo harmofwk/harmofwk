@@ -49,10 +49,4 @@ define('BLOCS',dirname($_SERVER["SCRIPT_FILENAME"])."/blocs");
 
 define('DEBUG', 0);
 
-//
-// Définissez dans cet array toutes vos classes Doctrine_Record si vous souhaitez les créer automatiquement à l'aide de Doctrine
-//
-
-$my_tables_doctrine = array('News');
-
 ?>

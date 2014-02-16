@@ -1,10 +1,12 @@
 <?php
+function endsWith($str, $sub) {
+    return ( substr( $str, strlen( $str ) - strlen( $sub ) ) == $sub );
+}
+
 class install extends Module{
 
 	public function action_index(){
 		$this->set_title("Installation");
-
-		global $my_tables_doctrine;
 
 		// Sécurisation de ce module, l'install doit être activé
 		if(!file_exists("conf/INSTALL"))
@@ -51,16 +53,32 @@ class install extends Module{
 		}
 
 		// Chargement des tables Doctrine Record
-		foreach ($my_tables_doctrine as $table) {
-			$my_tables[] = $table;
-		}
+		$dir = opendir(CLASSES);
+		$my_tables = array();
+	    while (false !== ($entry = readdir($dir))) {
+	    	if(!endsWith($entry, "Table.class.php") && $entry != "." && $entry != "..")
+	    	{
+	    		$exp = explode(".", $entry);
+	    		$my_tables[] = $exp[0];
+	    	}
+	    }
 		$this->tpl->assign("my_tables", $my_tables);
 
 	}
 
 	public function action_initdb(){
 
-		global $my_tables_doctrine;
+		// Chargement des tables Doctrine Record
+		$dir = opendir(CLASSES);
+		$my_tables_doctrine = array();
+	    while (false !== ($entry = readdir($dir))) {
+	    	if(!endsWith($entry, "Table.class.php") && $entry != "." && $entry != "..")
+	    	{
+	    		$exp = explode(".", $entry);
+	    		$my_tables_doctrine[] = $exp[0];
+	    	}
+	        	
+	    }
 
 		foreach($my_tables_doctrine as $t)
 		{
