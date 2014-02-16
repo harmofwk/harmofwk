@@ -92,7 +92,14 @@ $moteur->load_content($tpl);
 /****************************
 ** Chargement des blocs statiques sur la page
 ****************************/
-include ("blocs/Blocs.ini.php");
+$dir = opendir(BLOCS);
+$blocs = array();
+while (false !== ($entry = readdir($dir))) {
+	if($entry != "." && $entry != "..")
+	{
+		$blocs[] = $entry;
+	}
+}
 foreach ($blocs as $b){
 	include ("blocs/$b/$b.bloc.php");
 	$bl = new $b();

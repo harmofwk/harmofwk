@@ -34,16 +34,14 @@ HarmoFWK offre également la librairie CSS Kickstart, semblable à Bootstrap. </
 
 <p> 
 	Pour commencer, vous pouvez modifier quelques paramètres dans le fichier <code>conf/Params.ini.php</code>. Connexion à la base de données, URL Rewriting, et autres constantes utiles. <br />
-	Dans ce fichier, vous trouverez une variable <code>$my_tables_doctrine</code>, ou vous définirez toutes vos classes Doctrine_Record sous forme d'arrays. Cette étape est utile si vous souhaitez créez vos tables automatiquement via l'ORM. 
 </p>
 <p>
 	Ecrivez ensuite vos classes Doctrine_Record et Doctrine_Table en suivant l'exemple de la table News déjà fourni. <br />
 	Une fois que ceci est fait, vous pouvez lancez le script d'initialisation de votre base de données (bouton ci-dessus) qui créera toutes vos tables dans votre base. 
 </p>
 <p>
-	Les blocs de contenus sont des blocs qui ne sont pas forcèment des modules, que vous pouvez intégrer à toutes vos pages (comme un bloc d'espace membre de connexiob/déconnexion). <br />
-	Vous pouvez définir des blocs chacun dans un dossier distinct dans <code>blocs/</code>, en suivant l'exemple du bloc Login déjà défini pour exemple que vous pouvez reprendre et compléter. <br />
-	Vous devrez ensuite lister tout vos blocs dans l'array <code>blocs/Blocs.ini.php</code> afin que le frameork puisse les charger facilement. 
+	Les blocs de contenus sont des blocs qui ne sont pas forcèment des modules, que vous pouvez intégrer à toutes vos pages (comme un bloc d'espace membre de connexion/déconnexion). <br />
+	Vous pouvez définir des blocs chacun dans un dossier distinct dans <code>blocs/</code>, en suivant l'exemple du bloc Login déjà défini pour exemple que vous pouvez reprendre et compléter.
 </p>
 <p> 
 	Une fois l'installation terminé, vous pouvez supprimer le fichier <code>conf/INSTALL</code>, et pour plus de sécurité, vous pouvez supprimer le module <code>install</code>. 
