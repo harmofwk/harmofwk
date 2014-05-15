@@ -127,4 +127,6 @@ if($site->DisplayModuleOnly)
 	$tpl->display('ModuleOnly.tpl');
 else
 	$tpl->display('Main.tpl');
+
+$tpl->assign("appenv", APPLICATION_ENV);
 ?>

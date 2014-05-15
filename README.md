@@ -27,6 +27,7 @@ A ce jour, HarmoFWK possède plusieurs fonctionnalités supplémentaires :
 * Intégration de Doctrine qui facilite grandement les accès en base.
 * Intégration de Zebra_Form, puissante librairie de création de formulaires HTML.
 * Intégration de Kickstart, librairie CSS simpliste semblable à bootstrap.
+* Gestion des APPLICATION_ENV Apache (dev ou prod) pour les paramètres et le debug.
 
 Consultez la documentation disponible à l'installation pour en savoir plus sur ces librairies ! 
 

@@ -49,21 +49,21 @@
 
 		</div>
 
-		<!-- BEGIN. Supprimer pour la prod... -->
-		{if $affichages}
-		<div class='notice error'>
-			<h4> Affichages </h4>
-			<p>{$affichages}</p>
-		</div>
-		{/if}
+		{if $appenv == "dev"}
+			{if $affichages}
+			<div class='notice error'>
+				<h4> Affichages </h4>
+				<p>{$affichages}</p>
+			</div>
+			{/if}
 
-		{if $erreurs}
-		<div class='notice error'>
-			<h4> Erreurs </h4>			
-			<p>{$erreurs}</p>
-		</div>
+			{if $erreurs}
+			<div class='notice error'>
+				<h4> Erreurs </h4>			
+				<p>{$erreurs}</p>
+			</div>
+			{/if}
 		{/if}
-		<!-- Supprimer pour la prod... END. -->
 
 	</body>
 		
