@@ -1,0 +1,20 @@
+{
+    "name": "Harmo80/harmo_fwk",
+    "type": "framework",
+    "description": "A Minimalist MVC PHP Framework",
+    "keywords": ["framework","php","mvc","minimalist"],
+    "homepage": "https://github.com/Harmo80/harmo_fwk",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Maxime Gilardi",
+            "email": "contact@max-g.fr",
+            "homepage": "http://max-g.fr/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.2"
+    },
+    "version": "1.0.0"
+}
