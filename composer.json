@@ -1,9 +1,9 @@
 {
-    "name": "Harmo80/harmo_fwk",
+    "name": "harmofwk/harmofwk",
     "type": "framework",
     "description": "A Minimalist MVC PHP Framework",
     "keywords": ["framework","php","mvc","minimalist"],
-    "homepage": "https://github.com/Harmo80/harmo_fwk",
+    "homepage": "https://github.com/harmofwk/harmofwk",
     "license": "GPL-3.0",
     "authors": [
         {
