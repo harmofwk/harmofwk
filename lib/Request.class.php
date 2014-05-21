@@ -5,6 +5,7 @@
 * 
 * Changelog 
 * [21/05/2014] 
+* Suppression de la fonction __get() qui mélangeait les arguments en GET et en POST. Possible faille de sécurité. 
 * Nettoyage du Code. 
 */
 
@@ -19,17 +20,12 @@ class Request{
 			return self::$inst;
 	}
 
-	// Get une valeur en GET ou en POST
-	public function __get($name){
-		return isset ($_REQUEST[$name]) ? trim($_REQUEST[$name]) : '' ;
-	}
-
- 	// DEPRECATED : Get un paramètre en GET
+ 	// Get un paramètre en GET
 	public function get($name){
 		return isset ( $_GET[$name]) ? $_GET[$name] : "";
 	}
 
- 	// DEPRECATED : Get un paramètre en POST
+ 	// Get un paramètre en POST
 	public function post($name){
 		return isset($_POST[$name])?$_POST[$name]:"";
 	}
