@@ -1,7 +1,13 @@
 <?php
-/*
-* Chargeur de classes
+
+/* Fonction Autoload - HarmoFWK
+* Charge les dépendances du Framework.
+* 
+* Changelog 
+* [21/05/2014] 
+* Nettoyage du Code. 
 */
+
 function __autoload_my_classes($name) {
 	if($name == "Zebra_Form")
 	{

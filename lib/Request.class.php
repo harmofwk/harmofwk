@@ -1,38 +1,41 @@
 <?php
-/**
-* OMGL3
-* Class Request : interface SGBD
-*
+
+/* Classe Request - HarmoFWK
+* Gère les paramètres en GET et en POST de manière centralisée pour faciliter la tâche du Module. 
+* 
+* Changelog 
+* [21/05/2014] 
+* Nettoyage du Code. 
 */
+
 class Request{
 	
-	private static $inst;
+	private static $inst; // Instance unique
 	
- 	//récupère un paramètre de la requete GET	
-	public function get($name){
-		return isset ( $_GET[$name]) ? $_GET[$name] : "";
-	}
-
- 	//récupère un paramètre de la requete POST
-	public function post($name){
-		return isset($_POST[$name])?$_POST[$name]:"";
-	}
-
- 	//récupère la liste des fichiers envoyés (si formulaire avec fichiers) 
-	public function file($name){
-		return isset($_FILES[$name])?$_FILES[$name]:NULL;
-	}
- 	
-
+ 	// Initialisation de l'instance
 	public static function get_instance(){
 			if (self::$inst==NULL)
 				self::$inst=new Request;
 			return self::$inst;
 	}
-	
-	
+
+	// Get une valeur en GET ou en POST
 	public function __get($name){
 		return isset ($_REQUEST[$name]) ? trim($_REQUEST[$name]) : '' ;
 	}
-	
+
+ 	// DEPRECATED : Get un paramètre en GET
+	public function get($name){
+		return isset ( $_GET[$name]) ? $_GET[$name] : "";
+	}
+
+ 	// DEPRECATED : Get un paramètre en POST
+	public function post($name){
+		return isset($_POST[$name])?$_POST[$name]:"";
+	}
+
+ 	// Get un fichier uploadé ou NULL
+	public function file($name){
+		return isset($_FILES[$name])?$_FILES[$name]:NULL;
+	}
 }

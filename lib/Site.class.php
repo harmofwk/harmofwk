@@ -1,10 +1,13 @@
 <?php
-/**
-* OMGL3
-* Class Site : outils
-*
+
+/* Classe Site - HarmoFWK
+* Gère les redirections, les Messages d'erreur, le Debug, et les Routes. 
+* 
+* Changelog 
+* [21/05/2014] 
+* Nettoyage du Code. 
 */
-  
+
 define("ALERTE",1);
 define("ERREUR",2);
 define("OK",4);
@@ -12,18 +15,25 @@ define("INFO",8);
  	
 class Site{
 
+	// Instance Unique
 	private static $inst;
 
+	// Initialisation de l'instance
+	public static function get_instance($config){
+			if (self::$inst==NULL)
+				self::$inst = new Site($config);
+			return self::$inst;
+	}
+
+	// Lie l'instance à la session
 	private function __construct($session){
 		$this->session=$session;		
 	}
 	
-
-	//envoie un header de redirection au navigateur
-	//et quitte le script
+	// Fonction de redirection vers un autre module:action
 	function redirect($module='index',$action='index'){
-		session_write_close();
 
+		session_write_close();
 		global $err;
 		if(!$err){
 			if(defined("URLREWRITE"))
@@ -34,22 +44,11 @@ class Site{
 					header("Location: ?module=$module&action=$action");
 			}
 			else header("Location: ?module=$module&action=$action");
-
 			exit();
 		}
 	}
 
-	public static function get_instance($config){
-			if (self::$inst==NULL)
-				self::$inst = new Site($config);
-			return self::$inst;
-	}
-
-
-	/**
-	* retourne les éventuels messages d'infos stockés
-	* et les supprime
-	*/
+	// Afichage de tous les messages envoyés par les modules
 	function liste_messages(){
 		if(!$this->session->_messages)
 			return NULL;
@@ -64,31 +63,19 @@ class Site{
 	}
 	 
 	 
-	/**
-	* 
-	*/
+	// Ajout d'un message par le module
 	function ajouter_message($message,$type=INFO){
-		//pas possibilité d'affecter directement une donnée de tableau à une variable accédée avec __get
 		$temp=$this->session->_messages;
 		$temp[$message]=$type;
 		$this->session->_messages=$temp;
 	}
 	 
-	/**
-	* 
-	*/
+	// Supression des messages envoyés par le module
 	function effacer_messages(){
 		unset($this->session->_messages);
 	}
 
-
-				 
-	/**
-	* affiche un message utilisateur dans la zone de message
-	*
-	* $message : message affiché
-	* $type : type du message (défaut INFO)
-	*/
+	// Formatage des messages selon le type
 	function format($message, $type=INFO){
 	 
 		switch($type){
@@ -118,11 +105,7 @@ return <<< ENDOFMESSAGE
 ENDOFMESSAGE;
 		}
 		 
-		/**
-		* affiche un message de debug, avec la trace d'exécution
-		*
-		* $message : chaine, tableau, etc...
-		*/
+		// Affiche une Trace de Debug
 		function debug($message){
 			return "<pre class='debug'>"
 					."<b>"
@@ -133,12 +116,7 @@ ENDOFMESSAGE;
 		}
 
 		
-		/**
-		* affiche la trace d'exécution courante
-		*
-		* $backtrace : retour d'un debug_backtrace lors de l'appel à debug
-		* si NULL, inclus l'appel de debug dans la trace d'exécution
-		*/
+		// Affiche la trace d'execution courante
 		function trace($backtrace){
 		 
 			$chaine='';
