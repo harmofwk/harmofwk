@@ -5,11 +5,16 @@
   <Directory "PATH/TO/MY/SITE">
     AllowOverride all
   </Directory>
+
   RewriteEngine On
+  RewriteBase /
   RewriteRule ^/(.*)/$ /$1 [R]
   RewriteRule ^/([a-z]+)$ /index.php?module=$1 [L]
   RewriteRule ^/([a-z]+)/([a-z]+)$ /index.php?module=$1&action=$2 [L]
   RewriteRule ^/([a-z]+)/([a-z]+)$ /index.php?module=$1&action=$2 [L]
   RewriteRule ^/([a-z]+)/([a-z]+)-([a-zA-Z0-9]+)-([a-zA-Z0-9]+)\.html$ /index.php?module=$1&action=$2&$3=$4 [L]
   RewriteRule ^/([a-z]+)/([a-z]+)-([a-zA-Z0-9]+)-([a-zA-Z0-9]+)-([a-zA-Z0-9]+)-([a-zA-Z0-9]+)\.html$ /index.php?module=$1&action=$2&$3=$4&$5=$6 [L]
+
+
+
 </VirtualHost>
