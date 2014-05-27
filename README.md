@@ -4,6 +4,8 @@ Forké depuis [d-durand/mini-fwk](https://github.com/d-durand/mini-fwk)
 
 Publié sous licence GPLv3
 
+Copyright [Maxime Gilardi](http://www.max-g.fr) (Harmo)
+
 -----------------
 
 HarmoFWK est un framework MVC écrit en PHP minimaliste. No bullshit. 
@@ -34,13 +36,14 @@ A ce jour, HarmoFWK possède plusieurs fonctionnalités supplémentaires :
 
 Consultez la documentation disponible à l'installation pour en savoir plus sur ces librairies ! 
 
-## Todo
+## Roadmap
 
-Mes idées d'améliorations à ce jour qui seront intégrés à l'avenir : 
-* ~3 mois : Remplacer Doctrine par un ORM maison (HarmORM), plus léger, plus rapide, et qui se suffira à lui-même. 
-* ~6 mois : Ajout de types de champs supplémentaires sur Zebra_Form (ColorPicker et RichTextEditor). 
-* ~1 an : Inclusion de plusieurs modules pré-codés et prêts à l'emploi (Forum, Espace Membre, ...). Gestion sous formes de Bundles. 
-* ~2 ans : Création d'un HarmoCMS très simplifié avec auto install, déploiement auto de bundles, backend complet... 
+Mes idées d'améliorations et d'ajouts qui seront intégrés à l'avenir. Les délais sont très larges et à titre indicatif. 
+
+* ~2 mois : Remplacer Doctrine par un ORM maison (HarmORM), plus léger, plus rapide, et qui se suffira à lui-même. 
+* ~3 mois : Ajout de types de champs supplémentaires sur Zebra_Form (ColorPicker et RichTextEditor). 
+* ~6 mois : Inclusion de plusieurs modules pré-codés et prêts à l'emploi (Forum, Espace Membre, ...). Gestion sous formes de Bundles. 
+* +6 mois : Création d'un HarmoCMS très simplifié avec auto install, déploiement auto de bundles, backend complet... 
 
 ## Install / Getting Started
 

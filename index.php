@@ -79,10 +79,6 @@ $request=Request::get_instance();
 ****************************/
 $config=array('db'=>$db,'tpl'=>$tpl,'session'=>$session,'req'=>$request,'site'=>$site);
 
-// Page d'installation
-if(file_exists("conf/INSTALL") && $request->module != 'install')
-	$site->redirect("install");
-
 /****************************
 ** Chargement du frontController et du module 
 ****************************/

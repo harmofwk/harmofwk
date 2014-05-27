@@ -23,9 +23,9 @@ Class FrontController{
 	public function load_content(){
 
 		// Get le Module appelé ou Index par défaut
-		$module= ( $this->req->module != '' ) ? $this->req->module : 'index';	
+		$module= ( $this->req->get('module') != '' ) ? $this->req->get('module') : 'index';	
 		// Get l'action appelée ou Index par défaut
-		$action= ( $this->req->action != '')   ? $this->req->action : 'index';	
+		$action= ( $this->req->get('action') != '')   ? $this->req->get('action') : 'index';	
 		
 		// Assignation des variables au template
 		$this->tpl->assign('titre',' ');
@@ -33,11 +33,12 @@ Class FrontController{
 		$this->tpl->assign('action',$action);
 
 		// Vérification de l'existence du Module
-		if(!class_exists($module))
+		if(!class_exists($module)) {
 			if(file_exists("modules/$module/$module.module.php"))
 				require("modules/$module/$module.module.php");
 			else
 				throw new Exception("Module inconnu : $module");
+		}
 
 		// Instanciation du Module
 		$m=new $module();
