@@ -26,7 +26,7 @@ class Session{
  	}
   
   	// Ouverture de la Session Utilisateur
-	function ouvrir($){
+	function ouvrir(){
 		$this->ouverte = true;
 	}
 	
