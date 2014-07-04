@@ -3,11 +3,11 @@ function endsWith($str, $sub) {
     return ( substr( $str, strlen( $str ) - strlen( $sub ) ) == $sub );
 }
 
-class install extends Module{
+class Install extends Module{
 
 	public function action_index(){
 		$this->set_title("Installation");
-
+		
 		// Sécurisation de ce module, l'install doit être activé
 		if(!file_exists("conf/INSTALL"))
 		{

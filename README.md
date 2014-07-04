@@ -28,6 +28,7 @@ Ce framework est un mini framework MVC écrit en PHP, à l'origine destiné à �
 ## Ajouts et nouveautés
 
 A ce jour, HarmoFWK possède plusieurs fonctionnalités supplémentaires : 
+
 * Gestion de l'URL Rewriting (dans le framework et dans Smarty).
 * Intégration de Doctrine qui facilite grandement les accès en base.
 * Intégration de Zebra_Form, puissante librairie de création de formulaires HTML.

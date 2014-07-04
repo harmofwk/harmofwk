@@ -13,11 +13,8 @@ class Index extends Module{
 
 		// 
 		// Module d'installation 
-		// 
+		//
 		
 	}
-
-	
-	
 }	
 ?>
