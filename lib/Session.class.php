@@ -26,18 +26,18 @@ class Session{
  	}
   
   	// Ouverture de la Session Utilisateur
-	function ouvrir($user){
-		$this->user=$user;
+	function ouvrir($){
+		$this->ouverte = true;
 	}
 	
 	// Fermeture de la Session Utilisateur
 	function fermer(){
-		unset($this->user);
+		unset($this->ouverte);
 	}
 
 	// Retourne TRUE si une session est ouverte
 	function ouverte(){
-		return isset($this->user);
+		return isset($this->ouverte);
 	}
 	
 	// Get une variable de session précedemment stockée
