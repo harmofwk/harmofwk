@@ -6,6 +6,8 @@ session_start();
 * Gère les Sessions.
 * 
 * Changelog 
+* [27/06/2014] 
+* Argument pour ouvrir une session supprimé (Useless).
 * [21/05/2014] 
 * Nettoyage du Code. 
 */
@@ -26,13 +28,13 @@ class Session{
  	}
   
   	// Ouverture de la Session Utilisateur
-	function ouvrir($user){
-		$this->user=$user;
+	function ouvrir(){
+		$this->ouverte = true;
 	}
 	
 	// Fermeture de la Session Utilisateur
 	function fermer(){
-		unset($this->user);
+		unset($this->ouverte);
 	}
 
 	// Retourne TRUE si une session est ouverte
@@ -50,7 +52,7 @@ class Session{
 
 	// Set une variable de session
 	function __set($variable,$valeur){
-			$_SESSION['__variables'][$variable]=$valeur;
+			$_SESSION['__variables'][$variable] = $valeur;
 	}
 
 	// Destruction d'une variable de session
