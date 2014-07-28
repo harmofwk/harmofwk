@@ -1,17 +1,21 @@
-<!-- start template-->
 <!DOCTYPE html>
-<html>
+<html lang="{$html_lang}">
 	<head>
+		<meta charset="{$meta_charset}">
+		<meta name="description" content="{$site_description}">
+		<meta name="keywords" content="{$site_keywords}">
+		<meta name="author" content="{$site_author}">
 		<title>{$titre}</title>
-		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-1.10.2.min.js'></script>
-		<script src='http://{$smarty.server.SERVER_NAME}/js/jquery-ui-1.10.3.custom.min.js'></script>
-		<script src='http://{$smarty.server.SERVER_NAME}/js/kickstart.js'></script>
-		<script src='http://{$smarty.server.SERVER_NAME}/js/zebra_form.js'></script>
-		<script src='http://{$smarty.server.SERVER_NAME}/js/default.js'></script>
-		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/ui-lightness/jquery-ui-1.10.3.custom.min.css' />
-		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/kickstart/kickstart.css' />
-		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/zebraform/zebra_form.css' />
-		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/defaut.css' />
+		{foreach $tabjs as $js}
+		<script src='http://{$smarty.server.SERVER_NAME}/js/{$js}'></script>
+
+		{/foreach}
+
+		{foreach $tabcss as $css}
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/{$css}' />
+
+		{/foreach}
+
 	</head>
 	<body>
 
@@ -41,7 +45,7 @@
 				</div>
 
 				<div class="col_4">
-					{$Bloc_Login}
+					{$Bloc_Helloworld}
 				</div>
 			</div>
 
@@ -64,8 +68,7 @@
 			</div>
 			{/if}
 		{/if}
-
+		
 	</body>
 		
 </html>
-<!-- end template-->

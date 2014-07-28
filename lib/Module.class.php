@@ -9,12 +9,20 @@
 * Nettoyage du Code. 
 */
 
-class Module{
+class Module {
 
 	protected $tpl_name=""; // Template à charger
+	public $metainfos;
 
 	public function init(){
-	
+		$this->metainfos = new Metainfos();
+		
+		// Adding default css and script
+		$this->metainfos->addCSS("kickstart/kickstart.css");
+		$this->metainfos->addCSS("defaut.css");
+		$this->metainfos->addJS("jquery-1.10.2.min.js");
+		$this->metainfos->addJS("kickstart.js");
+		$this->metainfos->addJS("default.js");
 	}
 	
 	// Initialise les variables de config du site

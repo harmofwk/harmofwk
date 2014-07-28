@@ -49,13 +49,23 @@ Class FrontController{
 		// On lie les variables de template, de site, de database et de request au module
 		$m->set_variables($this->config);
 		$m->init();
-		
+
 		// On appelle l'action
 		$m->$action();
+
 
 		// On affiche le template
 		$res=$this->tpl->fetch("file:modules/$module/tpl/".$m->get_tpl_name().".tpl");
 		$this->tpl->assign('bloc_contenu',$res);
+
+		$this->tpl->assign('tabcss',$m->metainfos->getCSS());
+		$this->tpl->assign('tabjs',$m->metainfos->getJS());
+		$this->tpl->assign('html_lang',$m->metainfos->getLang());
+		$this->tpl->assign('meta_charset',$m->metainfos->getCharset());
+		$this->tpl->assign('site_description',$m->metainfos->getDescription());
+		$this->tpl->assign('site_keywords',$m->metainfos->getKeywords());
+		$this->tpl->assign('site_author',$m->metainfos->getAuthor());
+
 		$this->tpl->assign('messages',$this->site->liste_messages());
 	}
 }

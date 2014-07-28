@@ -15,6 +15,7 @@ defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV
 //
 
 if(APPLICATION_ENV == 'dev') {
+
 	define("DB_HOST","localhost");
 	define("DB_USER","root");
 	define("DB_PASS","");
@@ -33,6 +34,7 @@ if(APPLICATION_ENV == 'dev') {
 }
 else
 {
+
 	define("DB_HOST","localhost");
 	define("DB_USER","root");
 	define("DB_PASS","passprod");
@@ -55,6 +57,15 @@ else
 //
 
 define("SALT", "th1sisas4lt");
+
+//
+//
+//
+define("HTML_LANG", "fr");
+define("META_CHARSET", "utf-8");
+define("SITE_DESCRIPTION", "Un site utilisant HarmoFWK !");
+define("SITE_KEYWORDS", "site, harmofwk, mot-clé");
+define("SITE_AUTHOR", "Maxime Gilardi");
 
 //
 // Constantes des chemins vers les répertoires du Framework
