@@ -140,3 +140,9 @@ $this->site->assign("form", $render);
 &lt;a href="&#123;getLien module=index action=index}"&gt; Index &lt;/a&gt;
 &lt;a href="&#123;getLien module=install action=doc arg1=test val1=1 arg2=test2 val2=2}"&gt; Tests &lt;/a&gt;
 </pre>
+
+<p> Dans le module, vous pouvez désormais ajouter un include d'un script JS ou d'une feuille CSS selon vos besoins, sans surcharger toutes les pages de votre site. Les CSS doivent être dans le dossier styles, et le JS dans le dossier js. </p>
+<pre>
+    $this->addCSS("monfichier.css");
+    $this->addJS("monfichier.js");
+</pre>
