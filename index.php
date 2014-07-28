@@ -1,5 +1,4 @@
 <?php
-
 /****************************
 ** Gestionnaire d'erreurs et exceptions 
 ****************************/
@@ -119,10 +118,10 @@ $tpl->assign("erreurs",$aff_errs);
 /****************************
 ** AFFICHAGE DE LA PAGE SELON LE MODE VOULUE
 ****************************/
+$tpl->assign("appenv", APPLICATION_ENV);
+
 if($site->DisplayModuleOnly)
 	$tpl->display('ModuleOnly.tpl');
 else
 	$tpl->display('Main.tpl');
-
-$tpl->assign("appenv", APPLICATION_ENV);
 ?>
