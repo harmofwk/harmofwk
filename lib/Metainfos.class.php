@@ -1,7 +1,7 @@
 <?php 
 
 /* Classe Metainfos
-* Gère les inclusions de CSS et e JS dans la page ainsi que les métainformations de la page.
+* Gère les inclusions de CSS et de JS dans la page ainsi que les métainformations de la page.
 * Evite les inclusions inutiles sur toutes les pages. 
 * Chaque controlleur définit ses besoins. 
 * 
@@ -29,8 +29,11 @@ class Metainfos {
 	}
 
 	public function addCSS($css) {
-		if(file_exists("styles/$css")) {
-			$this->css[] = $css;
+		if((substr($css, 0, 4) === "http")) {
+			$this->css[] = new Metafile($css, false);
+		}
+		elseif(file_exists("styles/$css")) {
+			$this->css[] = new Metafile($css, true);
 		}
 		else {
 			throw new Exception("Fichier CSS inexistant ($css) !");
@@ -38,11 +41,14 @@ class Metainfos {
 	}
 
 	public function addJS($js) {
-		if(file_exists("js/$js")) {
-			$this->js[] = $js;
+		if((substr($js, 0, 4) === "http")) {
+			$this->js[] = new Metafile($js, false);
+		}
+		elseif(file_exists("js/$js")) {
+			$this->js[] = new Metafile($js, true);
 		}
 		else {
-			throw new Exception("Fichier JS inexistant ($css) !");
+			throw new Exception("Fichier JS inexistant ($js) !");
 		}
 	}
 

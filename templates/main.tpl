@@ -7,18 +7,23 @@
 		<meta name="author" content="{$site_author}">
 		<title>{$titre}</title>
 		{foreach $tabjs as $js}
-		<script src='http://{$smarty.server.SERVER_NAME}/js/{$js}'></script>
-
+		{if $js->isLocal() == true}
+		<script src='http://{$smarty.server.SERVER_NAME}/js/{$js->getFile()}'></script>
+		{else}
+		<link rel='stylesheet' href='{$js->getFile()}' />
+		{/if}
 		{/foreach}
 
 		{foreach $tabcss as $css}
-		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/{$css}' />
-
+		{if $css->isLocal() == true}
+		<link rel='stylesheet' href='http://{$smarty.server.SERVER_NAME}/styles/{$css->getFile()}' />
+		{else}
+		<link rel='stylesheet' href='{$css->getFile()}' />
+		{/if}
 		{/foreach}
 
 	</head>
-	<body>
-
+	<body class="module-{$module} action-{$action}">
 		<header>
 			<h1> HarmoFwk </h1>
 		</header>

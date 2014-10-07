@@ -67,7 +67,6 @@ spl_autoload_register(array('Doctrine_Core', 'autoload'));
 $dsn = 'mysql://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.BASE;
 $db = Doctrine_Manager::connection($dsn);
 
-
 /****************************
 ** Wrapper Request
 ****************************/
